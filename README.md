@@ -2,6 +2,7 @@
 For the Data Engineer test for Globant, divided in the following sections:
 
 ## 1.- 
+Will use Flask for the local development
 
 ## 2.- SQL
 BigQuery will be used as Database for the test, in a proyect and dataset created for this. Given this decision, all the tables in the solutions will start with ```globant-apescara.data.*```.
