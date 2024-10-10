@@ -41,7 +41,8 @@ Will use the Github Actions to handle all the app deployments, the jobs file is 
 
 For the cloud deployment of the solution, and to keep in line with the section 2, it was decided to use GCP, specificaly Cloud Run with its images hosted in Artifact registry.
 
-For security 
+For security propurses the apps authentication has Cloud IAM enabled authorization. So it can be accesed with the authorizartion: ```Authorization: Bearer $(gcloud auth print-identity-token)``` from a account with roles/run.invoker
+access.
 
 New API command:
 
