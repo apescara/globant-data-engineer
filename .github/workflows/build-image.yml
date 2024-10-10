@@ -3,8 +3,6 @@ name: Build Docker image
 on:
   push:
     branches: ["main"]
-  pull_requests:
-    branches: ["main"]
   
 env:
   PROJECT_ID: globant-apescara
