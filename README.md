@@ -20,7 +20,7 @@ Example of POST call:
 
 ``` bash
 curl --location 'http://127.0.0.1:5000' \
---form 'file=@"/C:/Users/andre/OneDrive/Desktop/globant/jobs.csv"' \
+--form 'file=@"FILE_PATH"' \
 --form 'table_id="jobs"' \
 --form 'column_names="id,jobs"' \
 --form 'write_disposition="WRITE_TRUNCATE"'
@@ -32,3 +32,31 @@ BigQuery will be used as Database for the test, in a proyect and dataset created
 All the solutions will be stored in the /sql path:
 - question 1: [sql/jobs_by_department_by_q.sql](sql/jobs_by_department_by_q.sql)
 - question 2: [sql/hired_by_department.sql](sql/hired_by_department.sql)
+
+## Bonus
+
+Will use the Github Actions to handle all the app deployments, the jobs file is located here: [build-image.yml](.github/workflows/build-image.yml)
+
+### Cloud deployment
+
+For the cloud deployment of the solution, and to keep in line with the section 2, it was decided to use GCP, specificaly Cloud Run with its images hosted in Artifact registry.
+
+For security 
+
+New API command:
+
+``` bash
+curl --location 'https://test-app-212236156731.us-central1.run.app' \
+--header 'Authorization: ••••••' \
+--form 'file=@"FILE_PATH"' \
+--form 'table_id="jobs"' \
+--form 'column_names="id,jobs"' \
+--form 'write_disposition="WRITE_TRUNCATE"'
+```
+
+
+### Testing
+
+### Conteinerization
+
+The app was containerized for deployment: [Dockerfile](Dockerfile)
