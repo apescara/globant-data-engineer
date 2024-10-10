@@ -3,6 +3,11 @@ name: Build Docker image
 on:
   push:
     branches: ["main"]
+    paths:
+      - /api/app.py
+      - Dockerfile
+      - requirements.txt
+      - /.github/workflows/build-image.yml
   
 env:
   PROJECT_ID: globant-apescara
