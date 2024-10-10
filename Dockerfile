@@ -1,0 +1,15 @@
+FROM python:3.10.15-slim-bullseye as base
+
+LABEL maintainer="apescara"
+
+RUN apt-get update
+RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN python -m pip install -r requirements.txt
+
+COPY /api/app.py .
+
+CMD ["gunicorn", "-b", "0.0.0.0:8888", "app:app"]
