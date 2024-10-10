@@ -33,7 +33,7 @@ jobs:
 
       - name: Build image
         run: docker build . --file Dockerfile --tag ${{ env.ARTIFACT_REPO }}
-        working-directory: WORKING_DIRECTORY
+        working-directory: .
 
       - name: Push image
         run: docker push ${{ env.ARTIFACT_REPO }}
