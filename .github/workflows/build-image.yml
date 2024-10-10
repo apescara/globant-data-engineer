@@ -7,7 +7,7 @@ on:
 env:
   PROJECT_ID: globant-apescara
   REGION: us-central1
-  ARTIFACT_REPO: us-central1-docker.pkg.dev/globant-apescara/globant-api
+  ARTIFACT_REPO: us-central1-docker.pkg.dev/globant-apescara/globant-api/cloud-function
 
 jobs:
   build-docker-img:
