@@ -37,3 +37,11 @@ jobs:
 
       - name: Push image
         run: docker push ${{ env.ARTIFACT_REPO }}
+
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: test-app
+          region: ${{ env.REGION }}
+          image: ${{ env.ARTIFACT_REPO }}:latest

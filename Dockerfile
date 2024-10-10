@@ -12,4 +12,6 @@ RUN python -m pip install -r requirements.txt
 
 COPY /api/app.py .
 
-CMD ["gunicorn", "-b", "0.0.0.0:8888", "app:app"]
+ENV PORT 8080
+
+CMD ["python", "app.py"]
